@@ -1,0 +1,153 @@
+body {
+  font-family: system-ui;
+  background: #eee;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  min-width: 5rem;
+  text-shadow: 0 1px 0 white, inset 0 2px 0 black;
+  color: grey;
+  border-radius: 9rem;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: 1px solid grey;
+  background: linear-gradient(to bottom, white, lightgrey);
+  box-shadow: 0 -2px 2px #0002, 0 2px 2px white, 0 4px 2px lightgrey,
+    inset 0 0 10px #0001;
+  transition: all 0.2s;
+  & > span {
+    display: flex;
+    transition: all 0.2s;
+
+    background-color: #000;
+    color: transparent;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+    background-clip: text;
+  }
+  &:active,
+  &.active {
+    box-shadow: 0 -2px 2px #0002, 0 2px 2px white, 0 4px 2px lightgrey,
+      inset 0 0 10px grey;
+
+    & > span {
+      background-color: #00607f;
+
+      transform: scale(0.9);
+    }
+  }
+}
+
+.cd {
+  height: 16rem;
+  width: 16rem;
+
+  cursor: pointer;
+  border: 8px solid #333;
+
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      #fff4 50%,
+      #fff3 70%,
+      transparent
+    ),
+    repeating-radial-gradient(black 0, black 8px, #222 8px, #222 10px);
+  position: relative;
+  border-radius: 999rem;
+
+  &::after {
+    transform: translate(-50%, -50%);
+    content: "";
+    font-family: serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 4rem;
+    font-weight: 900;
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    box-sizing: border-box;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #fff6 50%,
+        #fff3 70%,
+        transparent
+      ),
+      radial-gradient(black, black 10%, lightgrey 10%, lightgrey 30%, red 30%);
+    border-radius: 9999rem;
+    left: 50%;
+    top: 50%;
+    border: 1px solid red;
+  }
+  &.playing {
+    animation: spin 0.7s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cd-player {
+  height: 19rem;
+  width: 19rem;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px white, 0 6px 4px lightgrey, 0 -4px 3px lightgrey,
+    inset 0 10px 10px #0005, inset 0 3px 10px #0008;
+  position: relative;
+  border-radius: 9999rem;
+}
+
+.btns-cnt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.dspl {
+  font-family: "Scientific Calculator LCD", system-ui;
+
+  margin-bottom: 2rem;
+  height: 4rem;
+  width: 21rem;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #331111;
+  box-shadow: inset 0 6px 5px #000;
+  color: red;
+  display: flex;
+  text-shadow: 0 0 2px red;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 0.5rem;
+  font-size: 0.67rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
