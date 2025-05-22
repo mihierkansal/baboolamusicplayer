@@ -5,7 +5,7 @@ const audio = document.createElement("audio");
 
 $("#play").onclick = (e) => {
   if (!audio.src) {
-    $("#song-name").innerHTML = "No&nbsp;&nbsp;&nbsp;Music";
+    $("#song-name").innerHTML = "No Music";
     return;
   }
   if (audio.paused) {
@@ -59,9 +59,7 @@ function setAudio(file) {
 
   audio.currentTime = 0;
 
-  $("#song-name").innerHTML = file.name
-    .split(" ")
-    .join("&nbsp;&nbsp;&nbsp;&nbsp;");
+  $("#song-name").innerHTML = file.name;
 
   $("#time").innerHTML = "00:00:00";
 }
