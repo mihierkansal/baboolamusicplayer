@@ -1,4 +1,5 @@
 import "./style.css";
+import "baboolastyles/public/plastic.css";
 const $ = document.querySelector.bind(document);
 const audio = document.createElement("audio");
 
